@@ -1,7 +1,19 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 
 const Portfolio = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const handleScroll = () => {
+    if (scrollRef.current) {
+      const { scrollLeft, clientWidth } = scrollRef.current;
+      const index = Math.round(scrollLeft / clientWidth);
+      setActiveIndex(index);
+    }
+  };
+
   const projects = [
+    // ... projects data ...
     {
       title: "E-commerce Platform",
       description: "A full-featured online store with payment integration",
@@ -38,7 +50,11 @@ const Portfolio = () => {
           </p>
         </div>
         
-        <div className="flex md:grid md:grid-cols-2 lg:grid-cols-4 gap-8 overflow-x-auto pb-8 snap-x snap-mandatory scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0">
+        <div 
+          ref={scrollRef}
+          onScroll={handleScroll}
+          className="flex md:grid md:grid-cols-2 lg:grid-cols-4 gap-8 overflow-x-auto pb-8 snap-x snap-mandatory scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0"
+        >
           {projects.map((project, index) => (
             <div key={index} className="bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow flex-shrink-0 w-[85vw] md:w-auto snap-center">
               <div className="h-48 bg-gray-200 border-2 border-dashed w-full" />
@@ -62,6 +78,16 @@ const Portfolio = () => {
                 </div>
               </div>
             </div>
+          ))}
+        </div>
+
+        {/* mobile dots */}
+        <div className="flex justify-center space-x-2 mt-4 md:hidden">
+          {projects.map((_, index) => (
+            <div 
+              key={index} 
+              className={`h-2 transition-all duration-300 rounded-full ${index === activeIndex ? 'w-8 bg-emerald-500' : 'w-2 bg-gray-300 dark:bg-gray-700'}`}
+            />
           ))}
         </div>
         
