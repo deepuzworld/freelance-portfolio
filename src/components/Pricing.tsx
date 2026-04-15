@@ -72,29 +72,29 @@ const Pricing = () => {
           {plans.map((plan, index) => (
             <div 
               key={index} 
-              className={`rounded-[2rem] p-12 shadow-2xl flex-shrink-0 w-[85vw] md:w-auto snap-center flex flex-col transition-all duration-500 ${
+              className={`rounded-[2rem] p-12 shadow-2xl flex-shrink-0 w-[85vw] md:w-auto snap-center flex flex-col transition-all hover:scale-105 ${
                 plan.popular 
-                  ? 'border-[3px] border-emerald-500 relative bg-white dark:bg-gray-800 ring-[12px] ring-emerald-500/5 md:scale-110 md:-mt-8 z-10' 
-                  : 'bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 md:mt-0'
+                  ? 'border-[3px] border-[#C5A059] relative bg-white dark:bg-gray-800 ring-8 ring-[#C5A059]/5' 
+                  : 'bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700'
               }`}
             >
               {plan.popular && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-emerald-500 text-white text-[10px] font-black uppercase tracking-[0.2em] px-8 py-2 rounded-xl shadow-lg">
+                <div className="absolute -top-1 left-1/2 -translate-x-1/2 bg-gradient-to-r from-[#C5A059] to-[#E2C07D] text-white text-[10px] font-black uppercase tracking-[0.2em] px-8 py-2 rounded-b-xl shadow-lg">
                   Most Popular
                 </div>
               )}
               <div className="flex-grow">
                 <h3 className="text-3xl font-black text-gray-900 dark:text-white mb-3">{plan.name}</h3>
                 <p className="text-gray-500 dark:text-gray-400 mb-8 font-medium text-sm leading-relaxed">{plan.description}</p>
-                <div className="text-5xl font-black text-emerald-600 mb-10 flex items-baseline">
+                <div className="text-5xl font-black text-gray-900 dark:text-white mb-10 flex items-baseline">
                   {plan.price}
-                  <span className="text-2xl ml-1 text-emerald-400 font-bold">+</span>
+                  <span className="text-2xl ml-1 text-gray-400 font-bold">+</span>
                 </div>
                 
                 <ul className="space-y-4 mb-10">
                   {plan.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-start">
-                      <svg className="w-5 h-5 text-emerald-500 mr-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <svg className="w-5 h-5 text-[#C5A059] mr-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path>
                       </svg>
                       <span className="text-gray-600 dark:text-gray-300 font-bold text-sm tracking-tight">{feature}</span>
@@ -105,7 +105,7 @@ const Pricing = () => {
               
               <button className={`w-full py-4 px-5 rounded-2xl font-black uppercase tracking-widest text-xs shadow-lg transition-all ${
                 plan.popular
-                  ? 'bg-emerald-600 hover:bg-emerald-700 text-white shadow-emerald-500/20'
+                  ? 'bg-gray-900 hover:bg-black text-white dark:bg-white dark:hover:bg-gray-100 dark:text-gray-900'
                   : 'bg-gray-50 hover:bg-gray-100 text-gray-900 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-white'
               }`}>
                 GET STARTED
@@ -119,14 +119,14 @@ const Pricing = () => {
           {plans.map((_, index) => (
             <div 
               key={index} 
-              className={`h-2 transition-all duration-300 rounded-full ${index === activeIndex ? 'w-8 bg-emerald-500' : 'w-2 bg-gray-300 dark:bg-gray-700'}`}
+              className={`h-2 transition-all duration-300 rounded-full ${index === activeIndex ? 'w-8 bg-[#C5A059]' : 'w-2 bg-gray-300 dark:bg-gray-700'}`}
             />
           ))}
         </div>
         
         <div className="text-center mt-12">
-          <p className="text-lg text-gray-600 dark:text-gray-400">
-            Need a custom solution? <a href="#contact" className="text-emerald-600 hover:text-emerald-700 dark:text-emerald-400 dark:hover:text-emerald-300 font-medium">Contact me</a> for a personalized quote.
+          <p className="text-lg text-gray-500 dark:text-gray-400">
+            Need a custom solution? <a href="#contact" className="text-[#C5A059] hover:text-[#B08E48] font-black uppercase tracking-widest text-xs ml-2">Contact me</a>
           </p>
         </div>
       </div>

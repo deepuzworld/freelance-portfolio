@@ -3,30 +3,30 @@ import { HashLink as Link } from 'react-router-hash-link';
 
 const Hero = () => {
   return (
-    <section id="home" className="pt-32 pb-20 bg-gradient-to-br from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
+    <section id="home" className="pt-32 pb-20 bg-[#F8F7F0] dark:bg-gray-900">
       <div className="max-w-[1920px] mx-auto px-5 md:px-8 lg:px-12">
         <div className="flex flex-col md:flex-row items-center">
           <div className="md:w-3/5 mb-12 md:mb-0">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
-              Hi, I'm <span className="text-emerald-600">Deepak</span>
+            <h1 className="text-6xl md:text-7xl lg:text-8xl font-black text-gray-900 dark:text-white mb-6 leading-tight tracking-tighter">
+              Hi, I'm <span className="text-[#C5A059]">Deepak</span>
               <br />
               Freelance Developer
             </h1>
-            <p className="text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-xl leading-relaxed">
+            <p className="text-xl text-gray-500 dark:text-gray-400 mb-10 max-w-xl leading-relaxed">
               I create stunning websites and applications that help businesses grow. With expertise in modern web technologies, I deliver high-quality solutions tailored to your needs.
             </p>
-            <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mb-12">
+            <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mb-16">
               <Link 
                 smooth
                 to="/#portfolio" 
-                className="bg-gray-900 hover:bg-black text-white dark:bg-white dark:hover:bg-gray-100 dark:text-gray-900 font-bold py-4 px-10 rounded-xl transition-all shadow-xl hover:scale-105 text-center"
+                className="bg-[#12141D] hover:bg-black text-white px-10 py-5 rounded-full font-black uppercase tracking-widest text-xs transition-all shadow-2xl hover:scale-105 text-center"
               >
                 VIEW MY WORK
               </Link>
               <Link 
                 smooth
                 to="/#pricing" 
-                className="border-2 border-gray-900 text-gray-900 hover:bg-gray-50 dark:border-white dark:text-white dark:hover:bg-gray-800 font-bold py-4 px-10 rounded-xl transition-all text-center"
+                className="border-2 border-[#12141D] text-[#12141D] dark:border-white dark:text-white px-10 py-5 rounded-full font-black uppercase tracking-widest text-xs transition-all hover:bg-gray-50 dark:hover:bg-gray-800 text-center"
               >
                 SEE PRICING
               </Link>
@@ -57,9 +57,9 @@ const Hero = () => {
                   className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110"
                 />
               </div>
-              <div className="absolute -bottom-6 -right-6 bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-2xl z-20 border border-gray-100 dark:border-gray-700">
-                <div className="text-emerald-600 font-black text-2xl">5.0 Rating</div>
-                <div className="text-gray-500 dark:text-gray-400 uppercase text-xs font-bold tracking-widest">Direct Client Reviews</div>
+              <div className="absolute -bottom-6 -right-6 bg-white dark:bg-gray-800 p-8 rounded-[2rem] shadow-2xl z-20 border border-gray-100 dark:border-gray-700">
+                <div className="text-[#C5A059] font-black text-3xl">5.0 Rating</div>
+                <div className="text-gray-400 dark:text-gray-500 uppercase text-[10px] font-black tracking-[0.2em] mt-1">Direct Client Reviews</div>
               </div>
               {/* Decorative backgrounds */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-emerald-500/5 dark:bg-emerald-500/10 rounded-full -z-0 blur-3xl" />

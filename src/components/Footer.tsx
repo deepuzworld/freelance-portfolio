@@ -30,7 +30,7 @@ const Footer = () => {
   };
 
   return (
-    <footer id="contact" className="bg-[#FCFAF2] dark:bg-gray-900 pt-24 pb-12">
+    <footer id="contact" className="bg-[#F8F7F0] dark:bg-gray-900 pt-24 pb-12">
       <div className="max-w-[1920px] mx-auto px-5 md:px-8 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 mb-20">
           <div>

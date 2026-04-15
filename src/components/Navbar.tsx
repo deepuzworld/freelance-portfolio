@@ -27,7 +27,7 @@ const Navbar = () => {
       <div className="max-w-[1920px] mx-auto px-5 md:px-8 lg:px-12">
         <div className="flex justify-between items-center h-20">
           <Link to="/#home" className="text-2xl font-black text-gray-900 dark:text-white tracking-tighter">
-            DEEPAK <span className="text-gray-300 dark:text-gray-700 font-light">//</span>
+            DEEPAK <span className="text-[#C5A059] font-light">//</span>
           </Link>
           
           {/* Desktop Menu */}
@@ -37,7 +37,7 @@ const Navbar = () => {
                 smooth
                 key={link.name}
                 to={link.href}
-                className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-all"
+                className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-400 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-all"
               >
                 {link.name}
               </Link>

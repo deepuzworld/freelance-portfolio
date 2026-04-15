@@ -48,11 +48,11 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-20 bg-white dark:bg-gray-900">
+    <section id="services" className="py-32 bg-white dark:bg-gray-900 overflow-hidden">
       <div className="max-w-[1920px] mx-auto px-5 md:px-8 lg:px-12">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">What I Can Do For You</h2>
-          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+        <div className="text-center mb-24">
+          <h2 className="text-6xl md:text-7xl font-black text-gray-900 dark:text-white mb-6 tracking-tighter">What I Can Do For You</h2>
+          <p className="text-xl text-gray-500 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
             From simple landing pages to complex web applications, I deliver solutions tailored to your business needs.
           </p>
         </div>
@@ -65,30 +65,30 @@ const Services = () => {
           {services.map((service, index) => (
             <div 
               key={index} 
-              className="bg-white dark:bg-gray-800 rounded-3xl p-10 shadow-xl hover:shadow-2xl transition-all flex flex-col h-full min-w-[85vw] md:min-w-0 snap-center relative overflow-hidden group border border-gray-100 dark:border-gray-700"
+              className="bg-white dark:bg-gray-800 rounded-[2.5rem] p-12 shadow-xl hover:shadow-2xl transition-all flex flex-col h-full min-w-[85vw] md:min-w-0 snap-center relative overflow-hidden group border border-gray-100 dark:border-gray-700"
             >
               {/* Number indicator */}
-              <div className="absolute top-8 left-10 w-12 h-12 bg-gray-50 dark:bg-gray-700 rounded-2xl flex items-center justify-center text-xl font-black text-gray-400 dark:text-gray-500 group-hover:bg-emerald-500 group-hover:text-white transition-colors">
+              <div className="absolute top-10 left-12 w-14 h-14 bg-[#F8F7F0] dark:bg-gray-700 rounded-2xl flex items-center justify-center text-xl font-black text-[#C5A059] group-hover:bg-[#C5A059] group-hover:text-white transition-colors">
                 {index + 1}
               </div>
               
-              <div className="flex-grow pt-16">
-                <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-4 leading-tight">{service.title}</h3>
-                <p className="text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">{service.description}</p>
-                <ul className="space-y-4 mb-10">
+              <div className="flex-grow pt-20">
+                <h3 className="text-3xl font-black text-gray-900 dark:text-white mb-6 leading-tight">{service.title}</h3>
+                <p className="text-gray-500 dark:text-gray-400 mb-10 leading-relaxed font-medium">{service.description}</p>
+                <ul className="space-y-4 mb-12">
                   {service.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-start">
-                      <svg className="w-6 h-6 text-emerald-500 mr-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7"></path>
+                      <svg className="w-5 h-5 text-[#C5A059] mr-4 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path>
                       </svg>
-                      <span className="text-gray-700 dark:text-gray-300 font-medium">{feature}</span>
+                      <span className="text-gray-600 dark:text-gray-300 font-bold text-sm tracking-tight">{feature}</span>
                     </li>
                   ))}
                 </ul>
               </div>
               <Link 
                 to={`/service/${service.title.toLowerCase().replace('/', '-').replace(' ', '-')}`}
-                className="w-full py-4 px-6 rounded-2xl font-black tracking-widest uppercase text-sm transition-all bg-gray-50 hover:bg-emerald-500 hover:text-white text-gray-900 dark:bg-gray-700 dark:hover:bg-emerald-600 dark:text-white block text-center mt-auto"
+                className="w-full py-5 px-6 rounded-2xl font-black tracking-[0.2em] uppercase text-[10px] transition-all bg-[#F9F9F9] hover:bg-gray-900 hover:text-white text-gray-500 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-white block text-center mt-auto shadow-sm"
               >
                 LEARN MORE
               </Link>
