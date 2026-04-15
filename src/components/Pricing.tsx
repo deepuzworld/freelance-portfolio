@@ -61,7 +61,7 @@ const Pricing = () => {
               }`}
             >
               {plan.popular && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#B89B72] text-white text-[10px] font-black px-6 py-2 rounded-full uppercase tracking-[0.2em] shadow-lg">
+                <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-[#B89B72] text-white text-[11px] font-black px-8 py-3 rounded-full uppercase tracking-[0.2em] shadow-2xl z-30">
                   Most Popular
                 </div>
               )}

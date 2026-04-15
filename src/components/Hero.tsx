@@ -4,7 +4,7 @@ import heroImg from '../assets/hero-character.png';
 
 const Hero = () => {
   return (
-    <section id="home" className="pt-24 pb-12 bg-magazine min-h-[75vh] flex items-center">
+    <section id="home" className="pt-36 pb-12 bg-magazine min-h-[75vh] flex items-center">
       <div className="max-w-[1920px] mx-auto px-5 md:px-8 lg:px-12 w-full">
         <div className="flex flex-col md:flex-row items-center">
           <div className="md:w-1/2 mb-10 md:mb-0">
@@ -50,7 +50,7 @@ const Hero = () => {
           </div>
           
           <div className="md:w-1/2 flex justify-center relative">
-            <div className="relative w-full max-w-md aspect-square flex items-center justify-center">
+            <div className="relative w-full max-w-lg aspect-square flex items-center justify-center">
               {/* Animated Circles behind image */}
               <div className="absolute inset-4 bg-[#B89B72]/10 rounded-full animate-pulse" />
               <div className="absolute inset-12 border border-[#B89B72]/20 rounded-full" />
