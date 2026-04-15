@@ -43,39 +43,35 @@ const FAQ = () => {
   ];
 
   return (
-    <section id="faq" className="py-20 bg-white dark:bg-gray-900 text-center">
+    <section id="faq" className="py-24 bg-magazine">
       <div className="max-w-[1920px] mx-auto px-5 md:px-8 lg:px-12">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Frequently Asked Questions</h2>
-          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+        <div className="text-center mb-24">
+          <h2 className="text-4xl md:text-6xl font-black text-gray-900 mb-6 tracking-tighter italic">FAQ // 01</h2>
+          <p className="text-xl md:text-2xl text-gray-500 max-w-3xl mx-auto font-light leading-relaxed">
             Everything you need to know about my services and process.
           </p>
         </div>
         
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-4xl mx-auto space-y-4">
           {faqs.map((faq, index) => (
-            <div key={index} className="border-b border-gray-200 dark:border-gray-700 py-6">
+            <div key={index} className={`bg-white border rounded-[2rem] transition-all duration-500 ${openIndex === index ? 'border-[#B89B72]' : 'border-gray-100 shadow-sm'}`}>
               <button
-                className="flex justify-between items-center w-full text-left"
+                className="flex justify-between items-center w-full text-left p-10 outline-none"
                 onClick={() => toggleAccordion(index)}
               >
-                <h3 className="text-lg font-medium text-gray-900 dark:text-white">{faq.question}</h3>
-                <svg 
-                  className={`w-5 h-5 text-emerald-600 transition-transform duration-300 ${openIndex === index ? 'transform rotate-180' : ''}`}
-                  fill="none" 
-                  stroke="currentColor" 
-                  viewBox="0 0 24 24" 
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
-                </svg>
+                <h3 className="text-xl md:text-2xl font-bold text-gray-900 leading-tight">{faq.question}</h3>
+                <div className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-500 ${openIndex === index ? 'bg-[#B89B72] text-white rotate-180' : 'bg-gray-50 text-gray-400'}`}>
+                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M19 9l-7 7-7-7"></path>
+                   </svg>
+                </div>
               </button>
               
-              {openIndex === index && (
-                <div className="mt-4 pr-8">
-                  <p className="text-gray-600 dark:text-gray-400">{faq.answer}</p>
+              <div className={`overflow-hidden transition-all duration-500 ease-in-out ${openIndex === index ? 'max-h-[300px] opacity-100' : 'max-h-0 opacity-0'}`}>
+                <div className="px-10 pb-10">
+                  <p className="text-lg text-gray-500 font-light leading-relaxed border-t border-gray-100 pt-8">{faq.answer}</p>
                 </div>
-              )}
+              </div>
             </div>
           ))}
         </div>
