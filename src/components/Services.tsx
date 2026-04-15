@@ -32,9 +32,9 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-24 bg-magazine">
+    <section id="services" className="py-12 bg-magazine">
       <div className="max-w-[1920px] mx-auto px-5 md:px-8 lg:px-12">
-        <div className="text-center mb-16">
+        <div className="text-center mb-10">
           <h2 className="text-3xl md:text-5xl font-black text-gray-900 mb-4">What I Can Do For You</h2>
           <p className="text-lg text-gray-500 max-w-2xl mx-auto font-light">
             From simple landing pages to complex web applications, I deliver solutions tailored to your business needs.

@@ -29,9 +29,9 @@ const Footer = () => {
   };
 
   return (
-    <footer id="contact" className="bg-magazine pt-32 pb-16">
+    <footer id="contact" className="bg-magazine pt-16 pb-8">
       <div className="max-w-[1920px] mx-auto px-5 md:px-8 lg:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 mb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 mb-12">
           <div>
             <h2 className="text-4xl md:text-7xl font-black text-gray-900 mb-10 tracking-tighter italic">Connect //</h2>
             <p className="text-2xl text-gray-500 mb-12 font-light leading-relaxed max-w-lg">
@@ -151,7 +151,7 @@ const Footer = () => {
           </div>
         </div>
         
-        <div className="border-t border-gray-100 pt-16 flex flex-col md:flex-row justify-between items-center text-gray-400">
+        <div className="border-t border-gray-100 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-400">
           <p className="text-xs font-bold uppercase tracking-widest">&copy; {new Date().getFullYear()} DEEPAK MATHEW. All rights reserved.</p>
           <div className="flex space-x-12 mt-6 md:mt-0">
              <a href="#" className="hover:text-gray-900 transition-colors text-xs font-bold uppercase tracking-widest">LinkedIn</a>

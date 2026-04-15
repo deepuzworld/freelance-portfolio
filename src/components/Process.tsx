@@ -25,9 +25,9 @@ const Process = () => {
   ];
 
   return (
-    <section id="process" className="py-24 bg-magazine">
+    <section id="process" className="py-12 bg-magazine">
       <div className="max-w-[1920px] mx-auto px-5 md:px-8 lg:px-12">
-        <div className="text-center mb-24">
+        <div className="text-center mb-12">
           <h2 className="text-4xl md:text-6xl font-black text-gray-900 mb-6 tracking-tighter">Our Proven Process</h2>
           <p className="text-xl md:text-2xl text-gray-500 max-w-3xl mx-auto font-light leading-relaxed">
             A meticulous workflow that ensures exceptional quality and keeps you informed at every milestone.
