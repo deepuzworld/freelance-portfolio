@@ -4,84 +4,66 @@ import heroImg from '../assets/hero-character.png';
 
 const Hero = () => {
   return (
-    <section id="home" className="pt-24 pb-20 min-h-screen flex flex-col items-center bg-magazine">
+    <section id="home" className="pt-32 pb-20 bg-magazine min-h-[90vh] flex items-center">
       <div className="max-w-[1920px] mx-auto px-5 md:px-8 lg:px-12 w-full">
-        
-        {/* Giant Hero Text + Character */}
-        <div className="relative flex flex-col items-center justify-center mb-16">
-          <h1 className="text-[15vw] md:text-[18vw] font-black leading-none text-gray-900/5 select-none font-display pointer-events-none">
-            PORTFOLIO
-          </h1>
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70vw] md:w-[40vw] max-w-md">
-            <img 
-              src={heroImg} 
-              alt="Professional Developer" 
-              className="w-full h-auto drop-shadow-2xl fade-in"
-            />
-          </div>
-          <div className="absolute bottom-[5vw] left-1/2 -translate-x-1/2 text-center">
-             <h2 className="text-2xl md:text-3xl font-bold uppercase tracking-widest text-[#B89B72]">Deepak Mathew</h2>
-          </div>
-        </div>
-
-        {/* Bio Section - 3 Columns */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mt-12 border-t border-gray-200 pt-16">
-          
-          <div className="space-y-6">
-            <h3 className="text-sm font-bold uppercase tracking-[0.2em] text-gray-400">Biography</h3>
-            <p className="text-xl md:text-2xl font-light leading-relaxed text-gray-800">
-              Hi, I'm <span className="font-bold text-gray-900 border-b-2 border-[#B89B72]">Deepak</span>. <br/>
-              A Full-stack Developer who questions the "why" to build things that feel "right". I bridge the gap between complex logic and effortless design.
+        <div className="flex flex-col md:flex-row items-center">
+          <div className="md:w-1/2 mb-12 md:mb-0">
+            <h1 className="text-4xl md:text-5xl lg:text-7xl font-black text-gray-900 mb-6 leading-tight">
+              Hi, I'm <span className="text-[#B89B72]">Deepak</span>
+              <br />
+              Freelance Developer
+            </h1>
+            <p className="text-xl text-gray-600 mb-8 max-w-lg leading-relaxed font-light">
+              I create stunning websites and applications that help businesses grow. With expertise in modern web technologies, I deliver high-quality solutions tailored to your needs.
             </p>
-          </div>
-
-          <div className="space-y-6">
-            <h3 className="text-sm font-bold uppercase tracking-[0.2em] text-gray-400">Experience</h3>
-            <div className="space-y-4">
-              <div className="flex justify-between items-start">
-                <div>
-                  <h4 className="font-bold">Lead Web Architect</h4>
-                  <p className="text-sm text-gray-500">Global Tech Solutions</p>
-                </div>
-                <span className="text-xs font-bold text-[#B89B72]">2022 — PRE</span>
-              </div>
-              <div className="flex justify-between items-start">
-                <div>
-                  <h4 className="font-bold">Senior React Developer</h4>
-                  <p className="text-sm text-gray-500">Creative Pixel Agency</p>
-                </div>
-                <span className="text-xs font-bold text-gray-400">2020 — 2022</span>
-              </div>
-              <div className="flex justify-between items-start">
-                <div>
-                  <h4 className="font-bold">Freelance UI Engineer</h4>
-                  <p className="text-sm text-gray-500">Digital Nomads Corp</p>
-                </div>
-                <span className="text-xs font-bold text-gray-400">2018 — 2020</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="space-y-8">
-            <div className="space-y-4">
-              <h3 className="text-sm font-bold uppercase tracking-[0.2em] text-gray-400">Contact</h3>
-              <div className="flex flex-col space-y-2">
-                <a href="mailto:hello@deepak.dev" className="text-lg hover:text-[#B89B72] transition-colors">hello@deepak.dev</a>
-                <a href="https://linkedin.com" className="text-lg hover:text-[#B89B72] transition-colors">LinkedIn // Deepak</a>
-              </div>
-            </div>
-            <div className="flex gap-4">
-              <Link smooth to="/#portfolio" className="bg-[#1A1A1A] text-white px-8 py-4 rounded-none uppercase font-bold text-xs tracking-widest hover:bg-[#B89B72] transition-all">
-                View Work
+            <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+              <Link 
+                smooth
+                to="/#portfolio" 
+                className="bg-gray-900 border-2 border-gray-900 hover:bg-[#B89B72] hover:border-[#B89B72] text-white font-bold py-4 px-10 rounded-full transition-all text-center uppercase text-xs tracking-widest shadow-xl"
+              >
+                View My Work
               </Link>
-              <Link smooth to="/#contact" className="border border-[#1A1A1A] text-[#1A1A1A] px-8 py-4 rounded-none uppercase font-bold text-xs tracking-widest hover:bg-[#1A1A1A] hover:text-white transition-all">
-                Hire Me
+              <Link 
+                smooth
+                to="/#pricing" 
+                className="border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white font-bold py-4 px-10 rounded-full transition-all text-center uppercase text-xs tracking-widest"
+              >
+                See Pricing
               </Link>
             </div>
+            
+            <div className="mt-12 flex flex-wrap gap-12">
+              <div>
+                <div className="text-4xl font-black text-gray-900">50+</div>
+                <div className="text-xs uppercase tracking-widest text-gray-400 font-bold mt-1">Projects</div>
+              </div>
+              <div>
+                <div className="text-4xl font-black text-gray-900">30+</div>
+                <div className="text-xs uppercase tracking-widest text-gray-400 font-bold mt-1">Clients</div>
+              </div>
+              <div>
+                <div className="text-4xl font-black text-gray-900">5+</div>
+                <div className="text-xs uppercase tracking-widest text-gray-400 font-bold mt-1">Experience</div>
+              </div>
+            </div>
           </div>
-
+          
+          <div className="md:w-1/2 flex justify-center relative">
+            <div className="relative w-full max-w-lg">
+              <div className="absolute inset-0 bg-[#B89B72]/10 rounded-full blur-3xl" />
+              <img 
+                src={heroImg} 
+                alt="Deepak Mathew" 
+                className="relative w-full h-auto drop-shadow-2xl fade-in z-10"
+              />
+              <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-2xl shadow-2xl border border-gray-100 z-20">
+                <div className="text-[#B89B72] font-black text-xl">5.0 Rating</div>
+                <div className="text-gray-400 text-xs uppercase tracking-widest font-bold">Client Reviews</div>
+              </div>
+            </div>
+          </div>
         </div>
-
       </div>
     </section>
   );
