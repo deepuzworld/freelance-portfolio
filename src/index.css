@@ -16,10 +16,33 @@ body {
   color: var(--text-dark);
 }
 
-.font-display {
-  font-family: 'Cabinet Grotesk', 'Outfit', sans-serif;
-  text-transform: uppercase;
-  letter-spacing: -0.02em;
+/* Standardized Typography Scale */
+.text-huge {
+  @apply text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-[1.05];
+}
+
+.text-section {
+  @apply text-4xl md:text-6xl font-black tracking-tighter leading-tight;
+}
+
+.text-card-title {
+  @apply text-2xl md:text-3xl font-bold tracking-tight;
+}
+
+.text-magazine-body {
+  @apply text-xl md:text-2xl font-light leading-relaxed text-gray-500;
+}
+
+.text-body {
+  @apply text-lg font-light leading-relaxed text-gray-500;
+}
+
+.text-label {
+  @apply text-[10px] font-black uppercase tracking-[0.3em] text-gray-400;
+}
+
+.text-gold {
+  @apply text-[#B89B72];
 }
 
 /* Scrollbar styling */

@@ -35,8 +35,8 @@ const Services = () => {
     <section id="services" className="py-12 bg-magazine">
       <div className="max-w-[1920px] mx-auto px-5 md:px-8 lg:px-12">
         <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-5xl font-black text-gray-900 mb-4">What I Can Do For You</h2>
-          <p className="text-lg text-gray-500 max-w-2xl mx-auto font-light">
+          <h2 className="text-section text-gray-900 mb-4">What I Can Do For You</h2>
+          <p className="text-magazine-body max-w-2xl mx-auto">
             From simple landing pages to complex web applications, I deliver solutions tailored to your business needs.
           </p>
         </div>
@@ -55,8 +55,8 @@ const Services = () => {
                 <div className="w-14 h-14 bg-[#B89B72]/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-[#B89B72] transition-colors duration-500">
                   <span className="text-2xl font-black text-[#B89B72] group-hover:text-white">{index + 1}</span>
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">{service.title}</h3>
-                <p className="text-gray-500 mb-8 font-light leading-relaxed">{service.description}</p>
+                <h3 className="text-card-title text-gray-900 mb-4">{service.title}</h3>
+                <p className="text-body mb-8">{service.description}</p>
                 <ul className="space-y-4 mb-10">
                   {service.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-center text-sm text-gray-600">

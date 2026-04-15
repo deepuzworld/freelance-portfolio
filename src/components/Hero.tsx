@@ -8,12 +8,12 @@ const Hero = () => {
       <div className="max-w-[1920px] mx-auto px-5 md:px-8 lg:px-12 w-full">
         <div className="flex flex-col md:flex-row items-center">
           <div className="md:w-1/2 mb-10 md:mb-0">
-            <h1 className="text-5xl md:text-6xl lg:text-8xl font-black text-gray-900 mb-6 leading-[1.1] tracking-tighter">
-              Hi, I'm <span className="text-[#B89B72]">Deepak</span>
+            <h1 className="text-huge text-gray-900 mb-6">
+              Hi, I'm <span className="text-gold">Deepak</span>
               <br />
               Freelance Developer
             </h1>
-            <p className="text-xl text-gray-500 mb-8 max-w-xl leading-relaxed font-light">
+            <p className="text-magazine-body mb-8 max-w-xl">
               I create stunning websites and applications that help businesses grow. With expertise in modern web technologies, I deliver high-quality solutions tailored to your needs.
             </p>
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-5">
@@ -35,16 +35,16 @@ const Hero = () => {
             
             <div className="mt-12 flex flex-wrap gap-12">
               <div>
-                <div className="text-4xl font-black text-gray-900 tracking-tighter">50+</div>
-                <div className="text-[10px] uppercase tracking-[0.2em] text-gray-400 font-black mt-1">Projects Completed</div>
+                <div className="text-section text-gray-900">50+</div>
+                <div className="text-label mt-1">Projects Completed</div>
               </div>
               <div>
-                <div className="text-4xl font-black text-gray-900 tracking-tighter">30+</div>
-                <div className="text-[10px] uppercase tracking-[0.2em] text-gray-400 font-black mt-1">Happy Clients</div>
+                <div className="text-section text-gray-900">30+</div>
+                <div className="text-label mt-1">Happy Clients</div>
               </div>
               <div>
-                <div className="text-4xl font-black text-gray-900 tracking-tighter">5+</div>
-                <div className="text-[10px] uppercase tracking-[0.2em] text-gray-400 font-black mt-1">Years of Exp.</div>
+                <div className="text-section text-gray-900">5+</div>
+                <div className="text-label mt-1">Years of Exp.</div>
               </div>
             </div>
           </div>
