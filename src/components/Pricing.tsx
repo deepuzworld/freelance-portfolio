@@ -15,131 +15,84 @@ const Pricing = () => {
   const plans = [
     {
       name: "Starter",
-      price: "₹15,000",
-      description: "Perfect for personal profiles and simple landing pages",
-      features: [
-        "Up to 5 pages",
-        "Mobile responsive design",
-        "Contact form integration",
-        "Basic SEO optimization",
-        "Social media integration",
-        "30 days free support",
-        "Fast loading speed",
-        "Free domain setup help"
-      ],
-      popular: false
+      price: "15K",
+      description: "For personal profiles and simple landing pages",
+      features: ["5 Pages", "Responsive", "Contact Forms", "Basic SEO", "Fast Loading"]
     },
     {
       name: "Business",
-      price: "₹25,000",
+      price: "25K",
       description: "Ideal for small businesses and growing companies",
-      features: [
-        "Up to 10 pages",
-        "Custom design & branding",
-        "Advanced SEO optimization",
-        "Google Maps integration",
-        "Blog/News section",
-        "Analytics dashboard",
-        "60 days free support",
-        "Content management system",
-        "Email integration",
-        "Performance optimization"
-      ],
-      popular: true
+      features: ["10 Pages", "Custom Design", "Advanced SEO", "Google Maps", "Blog/News", "Analytics"]
     },
     {
-      name: "Dynamic",
-      price: "₹40,000",
+      name: "Enterprise",
+      price: "40K+",
       description: "For e-commerce and complex web applications",
-      features: [
-        "Unlimited pages",
-        "Custom functionality",
-        "User authentication",
-        "Admin dashboard",
-        "Payment gateway integration",
-        "Database integration",
-        "API development",
-        "90 days free support",
-        "Advanced security features",
-        "Real-time updates",
-        "Third-party integrations",
-        "Priority support"
-      ],
-      popular: false
+      features: ["Unlimited Pages", "Custom Logic", "User Auth", "Payment Systems", "Admin Panel", "Priority Support"]
     }
   ];
 
   return (
-    <section id="pricing" className="py-20 bg-gray-50 dark:bg-gray-800">
+    <section id="pricing" className="py-32 bg-magazine border-t border-gray-100">
       <div className="max-w-[1920px] mx-auto px-5 md:px-8 lg:px-12">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Simple, Transparent Pricing</h2>
-          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            Choose the plan that fits your needs. All plans include quality code, responsive design, and ongoing support.
-          </p>
+        
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-24">
+          <div className="max-w-xl">
+             <h2 className="text-5xl md:text-7xl font-black font-display text-gray-900 tracking-tighter italic">Investment</h2>
+             <p className="text-xl text-gray-500 mt-6 font-light">Transparent pricing for quality-driven results.</p>
+          </div>
+          <div className="mt-8 md:mt-0">
+             <span className="text-xs font-bold uppercase tracking-widest text-gray-400">Plans // 2024</span>
+          </div>
         </div>
         
         <div 
           ref={scrollRef}
           onScroll={handleScroll}
-          className="flex md:grid md:grid-cols-3 gap-8 overflow-x-auto pb-8 snap-x snap-mandatory scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0"
+          className="flex md:grid md:grid-cols-3 gap-8 overflow-x-auto pb-8 snap-x snap-mandatory scrollbar-hide"
         >
           {plans.map((plan, index) => (
             <div 
               key={index} 
-              className={`rounded-xl p-8 shadow-lg flex-shrink-0 w-[85vw] md:w-auto snap-center flex flex-col ${
-                plan.popular 
-                  ? 'border-2 border-emerald-500 relative bg-gradient-to-b from-white to-gray-50 dark:from-gray-800 dark:to-gray-900' 
-                  : 'bg-white dark:bg-gray-900'
-              }`}
+              className="group flex-shrink-0 w-[85vw] md:w-auto snap-center bg-white border border-gray-100 p-12 flex flex-col justify-between hover:border-gray-900 transition-all duration-500"
             >
-              {plan.popular && (
-                <div className="absolute top-0 right-0 bg-emerald-500 text-white text-sm font-bold px-4 py-1 rounded-bl-lg rounded-tr-lg">
-                  Most Popular
+              <div className="space-y-10">
+                <div className="flex justify-between items-start">
+                  <h3 className="text-xl font-bold uppercase tracking-widest text-[#B89B72]">{plan.name}</h3>
+                  <span className="text-[10px] font-bold text-gray-300">CURRENCY // INR</span>
                 </div>
-              )}
-              <div className="flex-grow">
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">{plan.name}</h3>
-                <p className="text-gray-600 dark:text-gray-400 mb-4">{plan.description}</p>
-                <div className="text-3xl font-bold text-emerald-600 mb-6">{plan.price}<span className="text-lg">+</span></div>
                 
-                <ul className="space-y-3 mb-8">
+                <div className="space-y-2">
+                   <p className="text-6xl font-black font-display text-gray-900">₹{plan.price}</p>
+                   <p className="text-xs text-gray-400 font-light uppercase tracking-widest">{plan.description}</p>
+                </div>
+                
+                <ul className="space-y-4 border-t border-gray-100 pt-10">
                   {plan.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-start">
-                      <svg className="w-5 h-5 text-emerald-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                      </svg>
-                      <span className="text-gray-700 dark:text-gray-300">{feature}</span>
+                    <li key={featureIndex} className="flex items-center text-[10px] font-bold uppercase tracking-wider text-gray-500">
+                      <span className="w-1.5 h-1.5 bg-gray-200 rounded-full mr-4 group-hover:bg-[#B89B72] transition-colors" />
+                      {feature}
                     </li>
                   ))}
                 </ul>
               </div>
               
-              <button className={`w-full py-3 px-6 rounded-lg font-medium transition-colors mt-auto ${
-                plan.popular
-                  ? 'bg-emerald-600 hover:bg-emerald-700 text-white'
-                  : 'bg-gray-200 hover:bg-gray-300 text-gray-800 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-white'
-              }`}>
-                Get Started
+              <button className="mt-16 w-full py-5 bg-gray-900 text-white text-[10px] font-bold uppercase tracking-[0.3em] hover:bg-[#B89B72] transition-all">
+                Select Plan
               </button>
             </div>
           ))}
         </div>
 
-        {/* mobile dots */}
-        <div className="flex justify-center space-x-2 mt-4 md:hidden">
+        {/* dots */}
+        <div className="flex justify-center space-x-2 mt-8 md:hidden">
           {plans.map((_, index) => (
             <div 
               key={index} 
-              className={`h-2 transition-all duration-300 rounded-full ${index === activeIndex ? 'w-8 bg-emerald-500' : 'w-2 bg-gray-300 dark:bg-gray-700'}`}
+              className={`h-1 transition-all duration-300 ${index === activeIndex ? 'w-12 bg-gray-900' : 'w-4 bg-gray-300'}`}
             />
           ))}
-        </div>
-        
-        <div className="text-center mt-12">
-          <p className="text-lg text-gray-600 dark:text-gray-400">
-            Need a custom solution? <a href="#contact" className="text-emerald-600 hover:text-emerald-700 dark:text-emerald-400 dark:hover:text-emerald-300 font-medium">Contact me</a> for a personalized quote.
-          </p>
         </div>
       </div>
     </section>

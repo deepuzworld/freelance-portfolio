@@ -7,7 +7,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
+      setIsScrolled(window.scrollY > 20);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -18,68 +18,67 @@ const Navbar = () => {
     { name: 'Services', href: '/#services' },
     { name: 'Portfolio', href: '/#portfolio' },
     { name: 'Pricing', href: '/#pricing' },
-    { name: 'Process', href: '/#process' },
     { name: 'FAQ', href: '/#faq' },
   ];
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-md py-2' : 'bg-transparent py-4'}`}>
+    <nav className={`fixed w-full z-50 transition-all duration-500 ${isScrolled ? 'bg-[#FCFBF7]/90 backdrop-blur-md border-b border-gray-100 py-3' : 'bg-transparent py-6'}`}>
       <div className="max-w-[1920px] mx-auto px-5 md:px-8 lg:px-12">
         <div className="flex justify-between items-center">
-          <Link to="/#home" className="text-2xl font-bold bg-gradient-to-r from-emerald-600 to-teal-500 bg-clip-text text-transparent">
-            DEEPAK
+          <Link to="/#home" className="text-xl font-black font-display tracking-tighter text-gray-900 italic">
+            DEEPAK //
           </Link>
           
           {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden lg:flex space-x-12">
             {navLinks.map((link) => (
               <Link
                 smooth
                 key={link.name}
                 to={link.href}
-                className="font-medium text-gray-700 hover:text-emerald-600 dark:text-gray-300 dark:hover:text-emerald-400 transition-colors"
+                className="text-[10px] font-bold uppercase tracking-[0.3em] text-gray-500 hover:text-gray-900 transition-colors"
               >
                 {link.name}
               </Link>
             ))}
           </div>
           
-          <Link smooth to="/#contact" className="hidden md:block bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2 px-6 rounded-full transition-colors shadow-lg shadow-emerald-500/30">
+          <Link smooth to="/#contact" className="hidden md:block border-2 border-gray-900 text-gray-900 px-6 py-2 uppercase font-bold text-[10px] tracking-widest hover:bg-gray-900 hover:text-white transition-all">
             Contact Me
           </Link>
           
           {/* Mobile Menu Button */}
           <button 
-            className="md:hidden text-gray-700 dark:text-gray-300"
+            className="lg:hidden text-gray-900"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={isMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
-            </svg>
+            <div className="space-y-1.5 group cursor-pointer">
+              <span className={`block h-0.5 w-6 bg-current transition-transform duration-300 ${isMenuOpen ? 'translate-y-2 rotate-45' : ''}`}></span>
+              <span className={`block h-0.5 w-4 bg-current transition-opacity duration-300 ${isMenuOpen ? 'opacity-0' : ''}`}></span>
+              <span className={`block h-0.5 w-6 bg-current transition-transform duration-300 ${isMenuOpen ? '-translate-y-2 -rotate-45' : ''}`}></span>
+            </div>
           </button>
         </div>
         
         {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="md:hidden mt-4 py-4 bg-white dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 p-4">
-            <div className="flex flex-col space-y-4">
-              {navLinks.map((link) => (
-                <Link
-                  smooth
-                  key={link.name}
-                  to={link.href}
-                  className="font-medium text-gray-700 hover:text-emerald-600 dark:text-gray-300 dark:hover:text-emerald-400 transition-colors"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {link.name}
-                </Link>
-              ))}
-              <Link smooth to="/#contact" className="bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-3 px-6 rounded-xl transition-colors w-full text-center" onClick={() => setIsMenuOpen(false)}>
-                Contact Me
+        <div className={`lg:hidden absolute top-full left-0 w-full bg-[#FCFBF7] border-b border-gray-100 transition-all duration-500 ease-in-out ${isMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}`}>
+          <div className="flex flex-col space-y-6 p-10 text-center">
+            {navLinks.map((link) => (
+              <Link
+                smooth
+                key={link.name}
+                to={link.href}
+                className="text-xs font-bold uppercase tracking-[0.4em] text-gray-500 hover:text-gray-900 transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {link.name}
               </Link>
-            </div>
+            ))}
+            <Link smooth to="/#contact" className="border-2 border-gray-900 text-gray-900 px-6 py-4 uppercase font-bold text-[10px] tracking-widest" onClick={() => setIsMenuOpen(false)}>
+              Contact Me
+            </Link>
           </div>
-        )}
+        </div>
       </div>
     </nav>
   );

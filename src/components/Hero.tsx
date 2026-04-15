@@ -1,65 +1,87 @@
 import React from 'react';
 import { HashLink as Link } from 'react-router-hash-link';
+import heroImg from '../assets/hero-character.png';
 
 const Hero = () => {
   return (
-    <section id="home" className="pt-32 pb-20 bg-gradient-to-br from-white to-gray-100 dark:from-gray-900 dark:to-gray-800">
-      <div className="max-w-[1920px] mx-auto px-5 md:px-8 lg:px-12">
-        <div className="flex flex-col md:flex-row items-center">
-          <div className="md:w-1/2 mb-12 md:mb-0">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6">
-              Hi, I'm <span className="text-emerald-600">Alex</span>
-              <br />
-              Freelance Developer
-            </h1>
-            <p className="text-lg text-gray-700 dark:text-gray-300 mb-8 max-w-lg">
-              I create stunning websites and applications that help businesses grow. With expertise in modern web technologies, I deliver high-quality solutions tailored to your needs.
-            </p>
-            <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-              <Link 
-                smooth
-                to="/#portfolio" 
-                className="bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-3 px-8 rounded-full transition-colors shadow-lg text-center"
-              >
-                View My Work
-              </Link>
-              <Link 
-                smooth
-                to="/#pricing" 
-                className="border-2 border-emerald-600 text-emerald-600 hover:bg-emerald-50 dark:hover:bg-gray-800 font-medium py-3 px-8 rounded-full transition-colors text-center"
-              >
-                See Pricing
-              </Link>
-            </div>
-            
-            {/* <div className="mt-12 flex flex-wrap gap-8">
-              <div>
-                <div className="text-3xl font-bold text-gray-900 dark:text-white">50+</div>
-                <div className="text-gray-600 dark:text-gray-400">Projects Completed</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-gray-900 dark:text-white">30+</div>
-                <div className="text-gray-600 dark:text-gray-400">Happy Clients</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-gray-900 dark:text-white">5+</div>
-                <div className="text-gray-600 dark:text-gray-400">Years Experience</div>
-              </div>
-            </div> */}
+    <section id="home" className="pt-24 pb-20 min-h-screen flex flex-col items-center bg-magazine">
+      <div className="max-w-[1920px] mx-auto px-5 md:px-8 lg:px-12 w-full">
+        
+        {/* Giant Hero Text + Character */}
+        <div className="relative flex flex-col items-center justify-center mb-16">
+          <h1 className="text-[15vw] md:text-[18vw] font-black leading-none text-gray-900/5 select-none font-display pointer-events-none">
+            PORTFOLIO
+          </h1>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70vw] md:w-[40vw] max-w-md">
+            <img 
+              src={heroImg} 
+              alt="Professional Developer" 
+              className="w-full h-auto drop-shadow-2xl fade-in"
+            />
           </div>
-          
-          <div className="md:w-1/2 flex justify-center">
-            <div className="relative">
-              <div className="w-64 h-64 md:w-80 md:h-80 bg-emerald-500 rounded-full overflow-hidden border-4 border-white dark:border-gray-800 shadow-xl">
-                <div className="bg-gray-200 border-2 border-dashed rounded-xl w-full h-full" />
-              </div>
-              <div className="absolute -bottom-4 -right-4 bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg">
-                <div className="text-emerald-600 font-bold">5.0 Rating</div>
-                <div className="text-gray-600 dark:text-gray-400">on Reviews</div>
-              </div>
-            </div>
+          <div className="absolute bottom-[5vw] left-1/2 -translate-x-1/2 text-center">
+             <h2 className="text-2xl md:text-3xl font-bold uppercase tracking-widest text-[#B89B72]">Deepak Mathew</h2>
           </div>
         </div>
+
+        {/* Bio Section - 3 Columns */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mt-12 border-t border-gray-200 pt-16">
+          
+          <div className="space-y-6">
+            <h3 className="text-sm font-bold uppercase tracking-[0.2em] text-gray-400">Biography</h3>
+            <p className="text-xl md:text-2xl font-light leading-relaxed text-gray-800">
+              Hi, I'm <span className="font-bold text-gray-900 border-b-2 border-[#B89B72]">Deepak</span>. <br/>
+              A Full-stack Developer who questions the "why" to build things that feel "right". I bridge the gap between complex logic and effortless design.
+            </p>
+          </div>
+
+          <div className="space-y-6">
+            <h3 className="text-sm font-bold uppercase tracking-[0.2em] text-gray-400">Experience</h3>
+            <div className="space-y-4">
+              <div className="flex justify-between items-start">
+                <div>
+                  <h4 className="font-bold">Lead Web Architect</h4>
+                  <p className="text-sm text-gray-500">Global Tech Solutions</p>
+                </div>
+                <span className="text-xs font-bold text-[#B89B72]">2022 — PRE</span>
+              </div>
+              <div className="flex justify-between items-start">
+                <div>
+                  <h4 className="font-bold">Senior React Developer</h4>
+                  <p className="text-sm text-gray-500">Creative Pixel Agency</p>
+                </div>
+                <span className="text-xs font-bold text-gray-400">2020 — 2022</span>
+              </div>
+              <div className="flex justify-between items-start">
+                <div>
+                  <h4 className="font-bold">Freelance UI Engineer</h4>
+                  <p className="text-sm text-gray-500">Digital Nomads Corp</p>
+                </div>
+                <span className="text-xs font-bold text-gray-400">2018 — 2020</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="space-y-8">
+            <div className="space-y-4">
+              <h3 className="text-sm font-bold uppercase tracking-[0.2em] text-gray-400">Contact</h3>
+              <div className="flex flex-col space-y-2">
+                <a href="mailto:hello@deepak.dev" className="text-lg hover:text-[#B89B72] transition-colors">hello@deepak.dev</a>
+                <a href="https://linkedin.com" className="text-lg hover:text-[#B89B72] transition-colors">LinkedIn // Deepak</a>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <Link smooth to="/#portfolio" className="bg-[#1A1A1A] text-white px-8 py-4 rounded-none uppercase font-bold text-xs tracking-widest hover:bg-[#B89B72] transition-all">
+                View Work
+              </Link>
+              <Link smooth to="/#contact" className="border border-[#1A1A1A] text-[#1A1A1A] px-8 py-4 rounded-none uppercase font-bold text-xs tracking-widest hover:bg-[#1A1A1A] hover:text-white transition-all">
+                Hire Me
+              </Link>
+            </div>
+          </div>
+
+        </div>
+
       </div>
     </section>
   );

@@ -14,89 +14,86 @@ const Services = () => {
   };
 
   const services = [
-    // ... same services data ...
     {
-      title: "Static/Informative Websites",
+      id: "A",
+      title: "Static/Informative",
       description: "Perfect for personal profiles, portfolios, and landing pages. Clean, fast-loading, and SEO-optimized.",
-      features: [
-        "Responsive Design",
-        "SEO Optimization",
-        "Fast Loading",
-        "Modern UI/UX"
-      ]
+      features: ["Responsive Design", "SEO Optimization", "Fast Loading", "Modern UI/UX"]
     },
     {
-      title: "Business Websites",
+      id: "B",
+      title: "Business Solutions",
       description: "Professional corporate websites with contact forms, Google Maps integration, and content management.",
-      features: [
-        "Contact Forms",
-        "Maps Integration",
-        "CMS Integration",
-        "Analytics Setup"
-      ]
+      features: ["Contact Forms", "Maps Integration", "CMS Integration", "Analytics Setup"]
     },
     {
-      title: "Dynamic/E-commerce",
+      id: "C",
+      title: "Dynamic Systems",
       description: "Full-featured e-commerce platforms with admin panels, payment gateways, and inventory management.",
-      features: [
-        "Admin Dashboard",
-        "Payment Gateway",
-        "User Authentication",
-        "Database Integration"
-      ]
+      features: ["Admin Dashboard", "Payment Gateway", "User Auth", "DB Integration"]
     }
   ];
 
   return (
-    <section id="services" className="py-20 bg-white dark:bg-gray-900">
+    <section id="services" className="py-32 bg-magazine">
       <div className="max-w-[1920px] mx-auto px-5 md:px-8 lg:px-12">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">What I Can Do For You</h2>
-          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            From simple landing pages to complex web applications, I deliver solutions tailored to your business needs.
-          </p>
+        
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-24 border-b border-gray-100 pb-12">
+          <div className="max-w-xl">
+            <h2 className="text-5xl md:text-7xl font-black font-display text-gray-900 tracking-tighter italic">Capabilities</h2>
+            <p className="text-xl text-gray-500 mt-6 font-light">
+              Designing and developing digital products that solve real problems.
+            </p>
+          </div>
+          <div className="mt-8 md:mt-0">
+             <span className="text-xs font-bold uppercase tracking-widest text-gray-400">Services // 01 — 03</span>
+          </div>
         </div>
         
         <div 
           ref={scrollRef}
           onScroll={handleScroll}
-          className="flex md:grid md:grid-cols-3 gap-8 overflow-x-auto pb-8 snap-x snap-mandatory scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0"
+          className="flex md:grid md:grid-cols-3 gap-16 overflow-x-auto pb-8 snap-x snap-mandatory scrollbar-hide"
         >
           {services.map((service, index) => (
             <div 
               key={index} 
-              className="bg-gray-50 dark:bg-gray-800 rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow flex flex-col h-full min-w-[85vw] md:min-w-0 snap-center"
+              className="group flex-shrink-0 w-[85vw] md:w-auto snap-center space-y-8"
             >
-              <div className="flex-grow">
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">{service.title}</h3>
-                <p className="text-gray-600 dark:text-gray-400 mb-6">{service.description}</p>
-                <ul className="space-y-3 mb-8">
-                  {service.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-start">
-                      <svg className="w-5 h-5 text-emerald-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                      </svg>
-                      <span className="text-gray-700 dark:text-gray-300">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
+              <span className="text-4xl font-black font-display text-[#B89B72]/20 group-hover:text-[#B89B72] transition-colors duration-500 italic">
+                {service.id} //
+              </span>
+              
+              <div className="space-y-4">
+                <h3 className="text-3xl font-bold font-display text-gray-900 leading-tight">{service.title}</h3>
+                <p className="text-gray-500 font-light leading-relaxed">{service.description}</p>
               </div>
+
+              <ul className="space-y-4 border-t border-gray-100 pt-8">
+                {service.features.map((feature, featureIndex) => (
+                  <li key={featureIndex} className="flex items-center text-xs font-bold uppercase tracking-widest text-gray-400 group-hover:text-gray-900 transition-colors">
+                    <span className="w-2 h-2 bg-[#B89B72] mr-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+
               <Link 
-                to={`/service/${service.title.toLowerCase().replace('/', '-').replace(' ', '-')}`}
-                className="w-full py-3 px-6 rounded-lg font-medium transition-colors bg-gray-200 hover:bg-gray-300 text-gray-800 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-white block text-center mt-auto"
+                to={`/service/${service.title.toLowerCase().replace(' ', '-')}`}
+                className="inline-block text-[10px] font-black uppercase tracking-[0.3em] text-gray-900 border-b-2 border-gray-900 pb-1 hover:text-[#B89B72] hover:border-[#B89B72] transition-all"
               >
-                Learn More
+                Learn More →
               </Link>
             </div>
           ))}
         </div>
 
-        {/* Desktop grid handles alignment, so we only show dots on mobile */}
-        <div className="flex justify-center space-x-2 mt-4 md:hidden">
+        {/* dots */}
+        <div className="flex justify-center space-x-2 mt-8 md:hidden">
           {services.map((_, index) => (
             <div 
               key={index} 
-              className={`h-2 transition-all duration-300 rounded-full ${index === activeIndex ? 'w-8 bg-emerald-500' : 'w-2 bg-gray-300 dark:bg-gray-700'}`}
+              className={`h-1 transition-all duration-300 ${index === activeIndex ? 'w-12 bg-gray-900' : 'w-4 bg-gray-300'}`}
             />
           ))}
         </div>
