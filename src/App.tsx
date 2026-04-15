@@ -6,6 +6,7 @@ import Portfolio from './components/Portfolio';
 import Pricing from './components/Pricing';
 import Process from './components/Process';
 import FAQ from './components/FAQ';
+import Contact from './components/Contact';
 import Footer from './components/Footer';
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Pricing />
         <Process />
         <FAQ />
+        <Contact />
       </main>
       <Footer />
     </div>

@@ -22,10 +22,10 @@ const Hero = () => {
                 View My Work
               </a>
               <a 
-                href="#pricing" 
+                href="#services" 
                 className="border-2 border-emerald-600 text-emerald-600 hover:bg-emerald-50 dark:hover:bg-gray-800 font-medium py-3 px-8 rounded-full transition-colors text-center"
               >
-                See Pricing
+                Learn More
               </a>
             </div>
             

@@ -19,6 +19,7 @@ const Navbar = () => {
     { name: 'Pricing', href: '#pricing' },
     { name: 'Process', href: '#process' },
     { name: 'FAQ', href: '#faq' },
+    { name: 'Contact', href: '#contact' },
   ];
 
   return (
@@ -40,9 +41,12 @@ const Navbar = () => {
             ))}
           </div>
           
-          <button className="hidden md:block bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2 px-6 rounded-full transition-colors">
+          <a 
+            href="#contact"
+            className="hidden md:block bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2 px-6 rounded-full transition-colors"
+          >
             Contact Me
-          </button>
+          </a>
           
           {/* Mobile Menu Button */}
           <button 
@@ -69,9 +73,13 @@ const Navbar = () => {
                   {link.name}
                 </a>
               ))}
-              <button className="bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2 px-6 rounded-full transition-colors w-full">
+              <a 
+                href="#contact"
+                className="bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2 px-6 rounded-full transition-colors w-full text-center block"
+                onClick={() => setIsMenuOpen(false)}
+              >
                 Contact Me
-              </button>
+              </a>
             </div>
           </div>
         )}
