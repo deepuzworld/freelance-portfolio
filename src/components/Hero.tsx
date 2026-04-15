@@ -1,4 +1,5 @@
 import React from 'react';
+import { HashLink as Link } from 'react-router-hash-link';
 
 const Hero = () => {
   return (
@@ -15,18 +16,20 @@ const Hero = () => {
               I create stunning websites and applications that help businesses grow. With expertise in modern web technologies, I deliver high-quality solutions tailored to your needs.
             </p>
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-              <a 
-                href="#portfolio" 
+              <Link 
+                smooth
+                to="/#portfolio" 
                 className="bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-3 px-8 rounded-full transition-colors shadow-lg text-center"
               >
                 View My Work
-              </a>
-              <a 
-                href="#pricing" 
+              </Link>
+              <Link 
+                smooth
+                to="/#pricing" 
                 className="border-2 border-emerald-600 text-emerald-600 hover:bg-emerald-50 dark:hover:bg-gray-800 font-medium py-3 px-8 rounded-full transition-colors text-center"
               >
                 See Pricing
-              </a>
+              </Link>
             </div>
             
             {/* <div className="mt-12 flex flex-wrap gap-8">
