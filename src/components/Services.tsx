@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Services = () => {
   const services = [
@@ -62,12 +63,12 @@ const Services = () => {
                   </li>
                 ))}
               </ul>
-              <a 
-                href="#contact"
-                className="w-full py-3 px-6 rounded-lg font-medium transition-colors bg-gray-200 hover:bg-gray-300 text-gray-800 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-white text-center block"
+              <Link 
+                to={`/service/${service.title.toLowerCase().replace('/', '-').replace(' ', '-')}`}
+                className="w-full py-3 px-6 rounded-lg font-medium transition-colors bg-gray-200 hover:bg-gray-300 text-gray-800 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-white block text-center"
               >
                 Learn More
-              </a>
+              </Link>
             </div>
           ))}
         </div>
