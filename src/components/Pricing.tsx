@@ -60,7 +60,7 @@ const Pricing = () => {
 
   return (
     <section id="pricing" className="py-20 bg-gray-50 dark:bg-gray-800">
-      <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-20">
+      <div className="max-w-[1920px] mx-auto px-4 md:px-6 lg:px-10">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Simple, Transparent Pricing</h2>
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
