@@ -37,7 +37,7 @@ const Services = () => {
 
   return (
     <section id="services" className="py-20 bg-white dark:bg-gray-900">
-      <div className="container mx-auto px-4">
+      <div className="max-w-[1400px] mx-auto px-4 md:px-10">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">What I Can Do For You</h2>
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
@@ -49,23 +49,25 @@ const Services = () => {
           {services.map((service, index) => (
             <div 
               key={index} 
-              className="bg-gray-50 dark:bg-gray-800 rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow"
+              className="bg-gray-50 dark:bg-gray-800 rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow flex flex-col h-full"
             >
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">{service.title}</h3>
-              <p className="text-gray-600 dark:text-gray-400 mb-6">{service.description}</p>
-              <ul className="space-y-3 mb-8">
-                {service.features.map((feature, featureIndex) => (
-                  <li key={featureIndex} className="flex items-start">
-                    <svg className="w-5 h-5 text-emerald-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                    <span className="text-gray-700 dark:text-gray-300">{feature}</span>
-                  </li>
-                ))}
-              </ul>
+              <div className="flex-grow">
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">{service.title}</h3>
+                <p className="text-gray-600 dark:text-gray-400 mb-6">{service.description}</p>
+                <ul className="space-y-3 mb-8">
+                  {service.features.map((feature, featureIndex) => (
+                    <li key={featureIndex} className="flex items-start">
+                      <svg className="w-5 h-5 text-emerald-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                      </svg>
+                      <span className="text-gray-700 dark:text-gray-300">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
               <Link 
                 to={`/service/${service.title.toLowerCase().replace('/', '-').replace(' ', '-')}`}
-                className="w-full py-3 px-6 rounded-lg font-medium transition-colors bg-gray-200 hover:bg-gray-300 text-gray-800 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-white block text-center"
+                className="w-full py-3 px-6 rounded-lg font-medium transition-colors bg-gray-200 hover:bg-gray-300 text-gray-800 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-white block text-center mt-auto"
               >
                 Learn More
               </Link>

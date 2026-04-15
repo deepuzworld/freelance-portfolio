@@ -24,7 +24,7 @@ const Navbar = () => {
 
   return (
     <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-md py-2' : 'bg-transparent py-4'}`}>
-      <div className="container mx-auto px-4">
+      <div className="max-w-[1920px] mx-auto px-4 md:px-10">
         <div className="flex justify-between items-center">
           <Link to="/#home" className="text-2xl font-bold bg-gradient-to-r from-emerald-600 to-teal-500 bg-clip-text text-transparent">
             DEEPAK
