@@ -68,11 +68,11 @@ const Pricing = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="flex md:grid md:grid-cols-3 gap-8 overflow-x-auto pb-8 snap-x snap-mandatory scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0">
           {plans.map((plan, index) => (
             <div 
               key={index} 
-              className={`rounded-xl p-8 shadow-lg ${
+              className={`rounded-xl p-8 shadow-lg flex-shrink-0 w-[85vw] md:w-auto snap-center flex flex-col ${
                 plan.popular 
                   ? 'border-2 border-emerald-500 relative bg-gradient-to-b from-white to-gray-50 dark:from-gray-800 dark:to-gray-900' 
                   : 'bg-white dark:bg-gray-900'
@@ -83,22 +83,24 @@ const Pricing = () => {
                   Most Popular
                 </div>
               )}
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">{plan.name}</h3>
-              <p className="text-gray-600 dark:text-gray-400 mb-4">{plan.description}</p>
-              <div className="text-3xl font-bold text-emerald-600 mb-6">{plan.price}<span className="text-lg">+</span></div>
+              <div className="flex-grow">
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">{plan.name}</h3>
+                <p className="text-gray-600 dark:text-gray-400 mb-4">{plan.description}</p>
+                <div className="text-3xl font-bold text-emerald-600 mb-6">{plan.price}<span className="text-lg">+</span></div>
+                
+                <ul className="space-y-3 mb-8">
+                  {plan.features.map((feature, featureIndex) => (
+                    <li key={featureIndex} className="flex items-start">
+                      <svg className="w-5 h-5 text-emerald-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                      </svg>
+                      <span className="text-gray-700 dark:text-gray-300">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
               
-              <ul className="space-y-3 mb-8">
-                {plan.features.map((feature, featureIndex) => (
-                  <li key={featureIndex} className="flex items-start">
-                    <svg className="w-5 h-5 text-emerald-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                    <span className="text-gray-700 dark:text-gray-300">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-              
-              <button className={`w-full py-3 px-6 rounded-lg font-medium transition-colors ${
+              <button className={`w-full py-3 px-6 rounded-lg font-medium transition-colors mt-auto ${
                 plan.popular
                   ? 'bg-emerald-600 hover:bg-emerald-700 text-white'
                   : 'bg-gray-200 hover:bg-gray-300 text-gray-800 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-white'

@@ -45,11 +45,11 @@ const Services = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="flex md:grid md:grid-cols-3 gap-8 overflow-x-auto pb-8 snap-x snap-mandatory scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0">
           {services.map((service, index) => (
             <div 
               key={index} 
-              className="bg-gray-50 dark:bg-gray-800 rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow flex flex-col h-full"
+              className="bg-gray-50 dark:bg-gray-800 rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow flex flex-col h-full min-w-[85vw] md:min-w-0 snap-center"
             >
               <div className="flex-grow">
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">{service.title}</h3>
